@@ -1,6 +1,6 @@
 import functools
 import time
-from typing import Callable, Any
+from typing import Any, Callable
 
 
 def timeout_warning(func: Callable[..., Any]) -> Callable[..., Any]:

@@ -1,5 +1,5 @@
 import functools
-from typing import Callable, Any
+from typing import Any, Callable
 
 
 def to_upper(func: Callable[..., Any]) -> Callable[..., Any]:
