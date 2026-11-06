@@ -14,7 +14,7 @@ import pytest
 from polars.testing import assert_frame_equal
 
 # создаем объект Path с расположение json файла
-src = Path("/home/jaroslav/work/practice/tasc_1.json")
+src = Path(__file__).parent / "tasc_1.json"
 
 def read_json(src: Path|str) -> list[dict]:
     src = Path(src)
@@ -61,7 +61,7 @@ def expected_dataframe() -> pl.DataFrame:
 
 @pytest.fixture
 def test_link() -> Path:
-    return Path("/home/jaroslav/work/practice/tasc_1.json")
+    return Path(__file__).parent / "tasc_1.json"
 
 def test_df_load(expected_dataframe: pl.DataFrame, test_link: Path):
     json_list = read_json(test_link)
